@@ -24,8 +24,8 @@ const PORT = process.env.PORT || 300;
 const server = createServer(app);
 
 // 🌍 Allowed frontend origins for CORS (Cross-Origin Resource Sharing)
-const allowedOrigins = ['https://videocall-1-7i8w.onrender.com', // dev
-  'https://videocall-1-7i8w.onrender.com',];
+const allowedOrigins = [process.env.FRONTEND_URL];
+console.log(allowedOrigins);
 console.log(allowedOrigins); // Debugging: Check if the frontend URL is loaded properly
 
 // 🔧 Middleware to handle CORS
