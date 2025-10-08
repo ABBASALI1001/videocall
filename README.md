@@ -42,26 +42,6 @@ The UI is **modern and responsive**, serving as a mini-clone of Zoom.
 
 ---
 
-## 📂 Project Structure
-
-videocall-project/
-├── client/ # React frontend
-│ ├── src/
-│ │ ├── components/
-│ │ │ ├── common/ # Common UI components (Button, Input, Modal)
-│ │ │ ├── video/ # Video call components (VideoPlayer, Controls, Participants)
-│ │ │ └── ui/ # Other UI components
-│ │ ├── hooks/ # Custom React hooks (useAuth, useVideoCall, useWebRTC)
-│ │ ├── services/ # API services (authService, videoService)
-│ │ └── constants/ # App constants
-│ └── package.json
-├── server/ # Node.js backend
-│ ├── routes/
-│ ├── schema/
-│ ├── utils/
-│ └── package.json
-└── README.md # Root README (this file)
-
 ---
 
 ## ⚙️ Installation & Setup
