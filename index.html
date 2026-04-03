@@ -1,0 +1,1329 @@
+<!doctype html>
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>GoldenTechies | Web + App Agency for Startups</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-container": "#1abdff",
+              "secondary-fixed": "#d8e3fb",
+              "secondary-fixed-dim": "#bcc7de",
+              outline: "#a08e7a",
+              "surface-dim": "#0b1326",
+              "on-secondary-fixed-variant": "#3c475a",
+              "surface-container": "#171f33",
+              "on-surface": "#dae2fd",
+              "tertiary-fixed": "#c5e7ff",
+              "on-primary-fixed": "#2a1700",
+              "surface-bright": "#31394d",
+              "inverse-on-surface": "#283044",
+              "on-primary-container": "#613b00",
+              "surface-container-lowest": "#060e20",
+              "surface-variant": "#2d3449",
+              "surface-container-low": "#131b2e",
+              "surface-container-highest": "#2d3449",
+              "on-tertiary-fixed": "#001e2d",
+              "on-error": "#690005",
+              "surface-tint": "#ffb95f",
+              secondary: "#bcc7de",
+              "on-secondary": "#263143",
+              error: "#ffb4ab",
+              "surface-container-high": "#222a3d",
+              "error-container": "#93000a",
+              "on-tertiary-container": "#004966",
+              "on-secondary-fixed": "#111c2d",
+              surface: "#0b1326",
+              "on-primary": "#472a00",
+              "secondary-container": "#3e495d",
+              primary: "#ffc174",
+              tertiary: "#8fd5ff",
+              "on-background": "#dae2fd",
+              "primary-fixed-dim": "#ffb95f",
+              "primary-fixed": "#ffddb8",
+              "on-tertiary-fixed-variant": "#004c6a",
+              "inverse-surface": "#dae2fd",
+              "tertiary-fixed-dim": "#7fd0ff",
+              "on-primary-fixed-variant": "#653e00",
+              "on-tertiary": "#00344a",
+              "primary-container": "#f59e0b",
+              "outline-variant": "#534434",
+              "on-secondary-container": "#aeb9d0",
+              "on-surface-variant": "#d8c3ad",
+              "inverse-primary": "#855300",
+              "on-error-container": "#ffdad6",
+              background: "#0b1326",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              "2xl": "1.5rem",
+              full: "9999px",
+            },
+            fontFamily: {
+              headline: ["Inter", "sans-serif"],
+              body: ["Inter", "sans-serif"],
+              label: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #0b1326;
+        color: #dae2fd;
+      }
+      .glass-card {
+        background: rgba(23, 31, 51, 0.7);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 193, 116, 0.05);
+      }
+      .golden-gradient-text {
+        background: linear-gradient(135deg, #ffc174 0%, #f59e0b 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+
+      /* Modal Animation */
+      .modal-enter {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      .modal-enter-active {
+        opacity: 1;
+        transform: scale(1);
+        transition:
+          opacity 300ms,
+          transform 300ms;
+      }
+      .modal-exit {
+        opacity: 1;
+        transform: scale(1);
+      }
+      .modal-exit-active {
+        opacity: 0;
+        transform: scale(0.95);
+        transition:
+          opacity 300ms,
+          transform 300ms;
+      }
+
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #171f33;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #f59e0b;
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #ffc174;
+      }
+    </style>
+  </head>
+  <body
+    class="selection:bg-primary-container selection:text-on-primary-container"
+  >
+    <!-- TopNavBar Shell -->
+    <nav
+      class="fixed top-0 w-full z-50 bg-slate-950/70 backdrop-blur-xl shadow-2xl shadow-black/40"
+    >
+      <div
+        class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto"
+      >
+        <a
+          class="text-2xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-amber-500 to-amber-200"
+          href="#"
+        >
+         <h2>GoldenTechies</h2>
+        <div class="hidden md:flex gap-8 items-center">
+          <a
+            class="text-amber-400 font-bold border-b-2 border-amber-500 pb-1 font-inter tracking-tight"
+            href="#home"
+            >Home</a
+          >
+          <a
+            class="text-slate-300 font-medium hover:text-amber-200 transition-colors font-inter tracking-tight"
+            href="#services"
+            >Services</a
+          >
+          <a
+            class="text-slate-300 font-medium hover:text-amber-200 transition-colors font-inter tracking-tight"
+            href="#portfolio"
+            >Portfolio</a
+          >
+          <a
+            class="text-slate-300 font-medium hover:text-amber-200 transition-colors font-inter tracking-tight"
+            href="#about"
+            >About</a
+          >
+          <a
+            class="text-slate-300 font-medium hover:text-amber-200 transition-colors font-inter tracking-tight"
+            href="#contact"
+            >Contact</a
+          >
+          <button
+            class="bg-primary-container text-on-primary-container px-6 py-2 rounded-xl font-bold hover:scale-95 active:scale-90 transition-transform duration-300"
+          >
+            Get Started
+          </button>
+        </div>
+        <!-- Mobile Menu Toggle -->
+        <button class="md:hidden text-amber-500">
+          <span class="material-symbols-outlined" data-icon="menu">menu</span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- SECTION 1 — HERO -->
+    <section
+      class="relative min-h-screen flex items-center pt-20 overflow-hidden bg-surface"
+      id="home"
+    >
+      <!-- Ambient Glow Elements -->
+      <div
+        class="absolute top-1/4 -left-20 w-96 h-96 bg-primary/10 rounded-full blur-[120px]"
+      ></div>
+      <div
+        class="absolute bottom-1/4 -right-20 w-96 h-96 bg-tertiary/10 rounded-full blur-[120px]"
+      ></div>
+      <div
+        class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative z-10"
+      >
+        <div class="space-y-8">
+          <div
+            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-high border border-outline-variant/20"
+          >
+            <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+            <span
+              class="text-xs font-label uppercase tracking-widest text-on-surface-variant"
+              >Available for new projects</span
+            >
+          </div>
+          <h1
+            class="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tighter leading-[0.9] text-on-surface"
+          >
+            Web + App <br />
+            <span class="golden-gradient-text">Agency for Startups</span>
+          </h1>
+          <p
+            class="text-xl md:text-2xl text-on-surface-variant max-w-lg leading-relaxed"
+          >
+            AI-powered. Budget-friendly. Fast delivery. We turn your ambitious
+            ideas into polished digital realities.
+          </p>
+          <div class="flex flex-wrap gap-4 pt-4">
+            <a
+              class="px-8 py-4 bg-gradient-to-br from-primary-container to-primary text-on-primary font-bold rounded-xl shadow-lg shadow-primary/20 hover:scale-105 transition-transform"
+              href="#portfolio"
+            >
+              View Portfolio
+            </a>
+            <a
+              class="px-8 py-4 border border-outline-variant/40 hover:border-primary text-on-surface font-bold rounded-xl transition-all hover:bg-surface-container"
+              href="#contact"
+            >
+              Contact Us
+            </a>
+          </div>
+        </div>
+        <div class="hidden md:block relative">
+          <div
+            class="aspect-square rounded-2xl overflow-hidden glass-card p-4 relative group"
+          >
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-surface-dim/80 to-transparent z-10"
+            ></div>
+            <img
+              alt="Agency workspace"
+              class="w-full h-full object-cover rounded-xl grayscale group-hover:grayscale-0 transition-all duration-700"
+              data-alt="Modern collaborative workspace with developers working on multiple screens in a dark moody tech office lighting"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCo3xVui6XXd6j-LMqvX662-ddcRIMJATrQ8cYu26XVGM7RZ_LxodfV-q3xlKZntCalsi5fFqbpmLqLPI1JyG-xV9niLLafC87GLRf6mbjDEFXueo83D67DvoCHJlxC-TZowYXG8PtgJUk4LEPy02vwZ8tANAClXqdIo0OJ7JsOmFusC1d1Suh9BvPfkGEMnD5ikkYIRLX2gDvS1HMGRsQlUadsBi-CS-AzbdRrMuk13XsgD7biNbyJbZc6rz7FahvnseLv7pymLHfR"
+            />
+            <div class="absolute bottom-8 left-8 right-8 z-20">
+              <div class="glass-card p-6 rounded-xl border-l-4 border-primary">
+                <p class="text-on-surface font-bold text-lg italic"></p>
+                <p class="text-primary text-sm mt-2">
+                  We Build AI-powered Apps
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Floating Card -->
+          <div
+            class="absolute -bottom-10 -left-10 glass-card p-6 rounded-2xl shadow-2xl z-30 hidden lg:block"
+          >
+            <div class="flex items-center gap-4">
+              <div
+                class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center"
+              >
+                <span
+                  class="material-symbols-outlined text-primary"
+                  data-icon="rocket_launch"
+                  >rocket_launch</span
+                >
+              </div>
+              <div>
+                <p
+                  class="text-sm font-label text-on-surface-variant uppercase tracking-widest"
+                >
+                  Next-Gen Stack
+                </p>
+                <p class="text-on-surface font-extrabold">
+                  Next.js &amp; React-Native
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2 — SERVICES -->
+    <section class="py-24 bg-surface-container-low relative" id="services">
+      <div class="container mx-auto px-6">
+        <div
+          class="flex flex-col md:flex-row justify-between items-end gap-6 mb-16"
+        >
+          <div class="max-w-2xl">
+            <h2
+              class="text-xs font-label uppercase tracking-[0.2em] text-primary mb-4"
+            >
+              Our Expertise
+            </h2>
+            <p
+              class="text-4xl md:text-5xl font-extrabold tracking-tight text-on-surface"
+            >
+              The Alchemist's <span class="golden-gradient-text">Toolkit</span>
+            </p>
+          </div>
+          <p class="text-on-surface-variant max-w-xs mb-2">
+            We blend creativity with cutting-edge technology to solve complex
+            problems.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Card 1 -->
+          <div
+            class="glass-card p-8 rounded-2xl group hover:border-primary/50 transition-all duration-500 hover:-translate-y-2"
+          >
+            <div
+              class="w-14 h-14 bg-surface-bright rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary/10 transition-colors"
+            >
+              <span
+                class="material-symbols-outlined text-primary text-3xl"
+                data-icon="laptop_mac"
+                >laptop_mac</span
+              >
+            </div>
+            <h3 class="text-xl font-bold text-on-surface mb-3">Web Apps</h3>
+            <p class="text-on-surface-variant text-sm leading-relaxed">
+              Scalable, high-performance web solutions built with React and
+              Next.js for modern enterprises.
+            </p>
+          </div>
+          <!-- Card 2 -->
+          <div
+            class="glass-card p-8 rounded-2xl group hover:border-primary/50 transition-all duration-500 hover:-translate-y-2"
+          >
+            <div
+              class="w-14 h-14 bg-surface-bright rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary/10 transition-colors"
+            >
+              <span
+                class="material-symbols-outlined text-primary text-3xl"
+                data-icon="phone_iphone"
+                >phone_iphone</span
+              >
+            </div>
+            <h3 class="text-xl font-bold text-on-surface mb-3">Mobile Apps</h3>
+            <p class="text-on-surface-variant text-sm leading-relaxed">
+              Native-feel cross-platform mobile experiences crafted with React
+              Native.
+            </p>
+          </div>
+          <!-- Card 3 -->
+          <div
+            class="glass-card p-8 rounded-2xl group hover:border-primary/50 transition-all duration-500 hover:-translate-y-2"
+          >
+            <div
+              class="w-14 h-14 bg-surface-bright rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary/10 transition-colors"
+            >
+              <span
+                class="material-symbols-outlined text-primary text-3xl"
+                data-icon="draw"
+                >draw</span
+              >
+            </div>
+            <h3 class="text-xl font-bold text-on-surface mb-3">UI/UX Design</h3>
+            <p class="text-on-surface-variant text-sm leading-relaxed">
+              Bespoke interfaces designed in Figma with a focus on user
+              psychology and brand identity.
+            </p>
+          </div>
+          <!-- Card 4 -->
+          <div
+            class="glass-card p-8 rounded-2xl group hover:border-primary/50 transition-all duration-500 hover:-translate-y-2"
+          >
+            <div
+              class="w-14 h-14 bg-surface-bright rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary/10 transition-colors"
+            >
+              <span
+                class="material-symbols-outlined text-primary text-3xl"
+                data-icon="settings_suggest"
+                >settings_suggest</span
+              >
+            </div>
+            <h3 class="text-xl font-bold text-on-surface mb-3">Maintenance</h3>
+            <p class="text-on-surface-variant text-sm leading-relaxed">
+              Reliable 24/7 support and updates to ensure your digital products
+              stay secure and optimized.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3 — PORTFOLIO -->
+    <section class="py-24 bg-surface" id="portfolio">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2
+            class="text-4xl md:text-5xl font-extrabold tracking-tight text-on-surface mb-4"
+          >
+            Featured <span class="golden-gradient-text">Case Studies</span>
+          </h2>
+          <p class="text-on-surface-variant max-w-2xl mx-auto">
+            Selected projects that demonstrate our commitment to quality and
+            innovation.
+          </p>
+        </div>
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
+          id="projects-container"
+        >
+          <!-- Projects will be dynamically loaded here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4 — ABOUT ME -->
+    <section class="py-24 bg-surface-container-low overflow-hidden" id="about">
+      <div class="container mx-auto px-6">
+        <div class="grid lg:grid-cols-12 gap-16 items-center">
+          <div class="lg:col-span-5 relative">
+            <div
+              class="relative z-10 rounded-2xl overflow-hidden aspect-[4/5] shadow-2xl"
+            >
+              <img
+                alt="Md Abbas Ali"
+                class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                data-alt="Portrait of a professional young man in business casual attire with a warm confident expression, cinematic dark office background"
+                src="./images/image.png"
+              />
+            </div>
+            <div
+              class="absolute -bottom-10 -right-10 w-64 h-64 bg-primary/20 rounded-full blur-3xl -z-10"
+            ></div>
+            <div
+              class="absolute top-10 -left-10 w-48 h-48 bg-tertiary/10 rounded-full blur-3xl -z-10"
+            ></div>
+          </div>
+          <div class="lg:col-span-7 space-y-8">
+            <div>
+              <h2
+                class="text-xs font-label uppercase tracking-[0.2em] text-primary mb-4"
+              >
+                Founder &amp; Lead Dev
+              </h2>
+              <h3
+                class="text-4xl md:text-5xl font-extrabold text-on-surface mb-6 leading-tight"
+              >
+                Meet <span class="golden-gradient-text">Md Abbas Ali</span>
+              </h3>
+              <p class="text-on-surface-variant text-lg leading-relaxed">
+                With over 2+ years of experience in building digital ecosystems,
+                I founded GoldenTechies to bridge the gap between high-level
+                engineering and startup budgets. We believe that every founder
+                deserves a tech partner that treats their product like their
+                own.
+              </p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+              <div
+                class="p-6 bg-surface-container-high rounded-2xl border-l-4 border-primary"
+              >
+                <p class="text-4xl font-extrabold text-primary mb-1">50+</p>
+                <p
+                  class="text-xs font-label uppercase tracking-widest text-on-surface-variant"
+                >
+                  Projects Done
+                </p>
+              </div>
+              <div
+                class="p-6 bg-surface-container-high rounded-2xl border-l-4 border-primary"
+              >
+                <p class="text-4xl font-extrabold text-primary mb-1">30+</p>
+                <p
+                  class="text-xs font-label uppercase tracking-widest text-on-surface-variant"
+                >
+                  Happy Clients
+                </p>
+              </div>
+              <div
+                class="p-6 bg-surface-container-high rounded-2xl border-l-4 border-primary"
+              >
+                <p class="text-4xl font-extrabold text-primary mb-1">98%</p>
+                <p
+                  class="text-xs font-label uppercase tracking-widest text-on-surface-variant"
+                >
+                  Satisfaction
+                </p>
+              </div>
+            </div>
+            <div>
+              <p
+                class="text-xs font-label uppercase tracking-[0.2em] text-on-surface-variant mb-4"
+              >
+                The Stack
+              </p>
+              <div class="flex flex-wrap gap-3">
+                <span
+                  class="px-4 py-2 bg-surface-container-highest rounded-full text-sm font-medium text-on-surface hover:bg-primary hover:text-on-primary transition-colors cursor-default"
+                  >React</span
+                >
+                <span
+                  class="px-4 py-2 bg-surface-container-highest rounded-full text-sm font-medium text-on-surface hover:bg-primary hover:text-on-primary transition-colors cursor-default"
+                  >Node.js</span
+                >
+                <span
+                  class="px-4 py-2 bg-surface-container-highest rounded-full text-sm font-medium text-on-surface hover:bg-primary hover:text-on-primary transition-colors cursor-default"
+                  >MongoDB</span
+                >
+                <span
+                  class="px-4 py-2 bg-surface-container-highest rounded-full text-sm font-medium text-on-surface hover:bg-primary hover:text-on-primary transition-colors cursor-default"
+                  >Express</span
+                >
+                <span
+                  class="px-4 py-2 bg-surface-container-highest rounded-full text-sm font-medium text-on-surface hover:bg-primary hover:text-on-primary transition-colors cursor-default"
+                  >React-Native</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5 — TESTIMONIALS -->
+    <section class="py-24 bg-surface" id="testimonials">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2
+            class="text-4xl md:text-5xl font-extrabold tracking-tight text-on-surface mb-4"
+          >
+            What Our <span class="golden-gradient-text">Partners Say</span>
+          </h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Testimonial 1 -->
+          <div class="glass-card p-8 rounded-2xl flex flex-col">
+            <div class="flex gap-1 mb-6">
+              <span
+                class="material-symbols-outlined text-primary text-sm"
+                data-icon="star"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >star</span
+              >
+              <span
+                class="material-symbols-outlined text-primary text-sm"
+                data-icon="star"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >star</span
+              >
+              <span
+                class="material-symbols-outlined text-primary text-sm"
+                data-icon="star"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >star</span
+              >
+              <span
+                class="material-symbols-outlined text-primary text-sm"
+                data-icon="star"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >star</span
+              >
+              <span
+                class="material-symbols-outlined text-primary text-sm"
+                data-icon="star"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >star</span
+              >
+            </div>
+            <p class="text-on-surface-variant italic mb-8 flex-grow">
+              "GoldenTechies didn't just build an app; they built a business
+              tool that increased our patient retention by 40%."
+            </p>
+            <div class="flex items-center gap-4">
+              <div class="w-10 h-10 rounded-full bg-surface-bright"></div>
+              <div>
+                <p class="text-on-surface font-bold text-sm">
+                  Dr. Priya Sharma
+                </p>
+                <p class="text-primary text-[10px] uppercase tracking-widest">
+                  Medical Director
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Testimonial 2 -->
+          <div class="glass-card p-8 rounded-2xl flex flex-col">
+            <div class="flex gap-1 mb-6">
+              <span
+                class="material-symbols-outlined text-primary text-sm"
+                data-icon="star"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >star</span
+              >
+              <span
+                class="material-symbols-outlined text-primary text-sm"
+                data-icon="star"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >star</span
+              >
+              <span
+                class="material-symbols-outlined text-primary text-sm"
+                data-icon="star"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >star</span
+              >
+              <span
+                class="material-symbols-outlined text-primary text-sm"
+                data-icon="star"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >star</span
+              >
+              <span
+                class="material-symbols-outlined text-primary text-sm"
+                data-icon="star"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >star</span
+              >
+            </div>
+            <p class="text-on-surface-variant italic mb-8 flex-grow">
+              "Professionalism and speed at its best. They handled everything
+              from design to deployment seamlessly."
+            </p>
+            <div class="flex items-center gap-4">
+              <div class="w-10 h-10 rounded-full bg-surface-bright"></div>
+              <div>
+                <p class="text-on-surface font-bold text-sm">Ramesh Gupta</p>
+                <p class="text-primary text-[10px] uppercase tracking-widest">
+                  Tech Founder
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Testimonial 3 -->
+          <div class="glass-card p-8 rounded-2xl flex flex-col">
+            <div class="flex gap-1 mb-6">
+              <span
+                class="material-symbols-outlined text-primary text-sm"
+                data-icon="star"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >star</span
+              >
+              <span
+                class="material-symbols-outlined text-primary text-sm"
+                data-icon="star"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >star</span
+              >
+              <span
+                class="material-symbols-outlined text-primary text-sm"
+                data-icon="star"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >star</span
+              >
+              <span
+                class="material-symbols-outlined text-primary text-sm"
+                data-icon="star"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >star</span
+              >
+              <span
+                class="material-symbols-outlined text-primary text-sm"
+                data-icon="star"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >star</span
+              >
+            </div>
+            <p class="text-on-surface-variant italic mb-8 flex-grow">
+              "Their AI integration capabilities are top-tier. They made our
+              dashboard smarter than we imagined."
+            </p>
+            <div class="flex items-center gap-4">
+              <div class="w-10 h-10 rounded-full bg-surface-bright"></div>
+              <div>
+                <p class="text-on-surface font-bold text-sm">James Carter</p>
+                <p class="text-primary text-[10px] uppercase tracking-widest">
+                  Product Manager
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Testimonial 4 -->
+          <div class="glass-card p-8 rounded-2xl flex flex-col">
+            <div class="flex gap-1 mb-6">
+              <span
+                class="material-symbols-outlined text-primary text-sm"
+                data-icon="star"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >star</span
+              >
+              <span
+                class="material-symbols-outlined text-primary text-sm"
+                data-icon="star"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >star</span
+              >
+              <span
+                class="material-symbols-outlined text-primary text-sm"
+                data-icon="star"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >star</span
+              >
+              <span
+                class="material-symbols-outlined text-primary text-sm"
+                data-icon="star"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >star</span
+              >
+              <span
+                class="material-symbols-outlined text-primary text-sm"
+                data-icon="star"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >star</span
+              >
+            </div>
+            <p class="text-on-surface-variant italic mb-8 flex-grow">
+              "Finally an agency that speaks the language of startups. Flexible,
+              iterative, and incredibly fast delivery."
+            </p>
+            <div class="flex items-center gap-4">
+              <div class="w-10 h-10 rounded-full bg-surface-bright"></div>
+              <div>
+                <p class="text-on-surface font-bold text-sm">Emma Watson</p>
+                <p class="text-primary text-[10px] uppercase tracking-widest">
+                  Venture Lead
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6 — CONTACT -->
+    <section class="py-24 bg-surface-container-low" id="contact">
+      <div class="container mx-auto px-6">
+        <div
+          class="max-w-5xl mx-auto glass-card rounded-2xl overflow-hidden shadow-2xl"
+        >
+          <div class="grid md:grid-cols-2">
+            <div
+              class="p-12 bg-primary text-on-primary flex flex-col justify-between"
+            >
+              <div>
+                <h2 class="text-4xl font-extrabold mb-6">
+                  Let's build something <br />
+                  legendary.
+                </h2>
+                <p class="font-medium opacity-90 mb-12">
+                  Whether you're a day-one startup or an established business,
+                  we're ready to scale your vision.
+                </p>
+                <ul class="space-y-6">
+                  <li class="flex items-center gap-4">
+                    <span class="material-symbols-outlined" data-icon="mail"
+                      >mail</span
+                    >
+                    <span>goldentechez1@gmail.com</span>
+                  </li>
+                  <li class="flex items-center gap-4">
+                    <span class="material-symbols-outlined" data-icon="call"
+                      >call</span
+                    >
+                    <span>+91 7670888165</span>
+                  </li>
+                  <li class="flex items-center gap-4">
+                    <span
+                      class="material-symbols-outlined"
+                      data-icon="location_on"
+                      >location_on</span
+                    >
+                    <span>Global Delivery Hub</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="flex gap-4 mt-12">
+                <div
+                  class="w-10 h-10 rounded-lg bg-black/10 flex items-center justify-center hover:bg-black/20 transition-colors cursor-pointer"
+                >
+                  <span class="material-symbols-outlined" data-icon="share"
+                    >share</span
+                  >
+                </div>
+                <div
+                  class="w-10 h-10 rounded-lg bg-black/10 flex items-center justify-center hover:bg-black/20 transition-colors cursor-pointer"
+                >
+                  <span class="material-symbols-outlined" data-icon="person"
+                    >person</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="p-12 bg-surface-container-highest">
+              <form class="space-y-6">
+                <div class="space-y-2">
+                  <label
+                    class="text-xs font-label uppercase tracking-widest text-on-surface-variant"
+                    >Your Name</label
+                  >
+                  <input
+                    class="w-full px-5 py-4 rounded-xl bg-surface-container-lowest border-none focus:ring-2 focus:ring-primary text-on-surface placeholder:text-on-surface-variant/40"
+                    placeholder="John Doe"
+                    type="text"
+                  />
+                </div>
+                <div class="space-y-2">
+                  <label
+                    class="text-xs font-label uppercase tracking-widest text-on-surface-variant"
+                    >Email Address</label
+                  >
+                  <input
+                    class="w-full px-5 py-4 rounded-xl bg-surface-container-lowest border-none focus:ring-2 focus:ring-primary text-on-surface placeholder:text-on-surface-variant/40"
+                    placeholder="john@example.com"
+                    type="email"
+                  />
+                </div>
+                <div class="space-y-2">
+                  <label
+                    class="text-xs font-label uppercase tracking-widest text-on-surface-variant"
+                    >Message</label
+                  >
+                  <textarea
+                    class="w-full px-5 py-4 rounded-xl bg-surface-container-lowest border-none focus:ring-2 focus:ring-primary text-on-surface placeholder:text-on-surface-variant/40"
+                    placeholder="Tell us about your project..."
+                    rows="4"
+                  ></textarea>
+                </div>
+                <button
+                  class="w-full py-5 bg-gradient-to-br from-primary-container to-primary text-on-primary font-bold rounded-xl shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-[0.98] transition-all"
+                >
+                  Send Message
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 py-12 px-8 border-t border-amber-900/10">
+      <div
+        class="flex flex-col md:flex-row justify-between items-center gap-6 max-w-7xl mx-auto"
+      >
+        <div class="flex flex-col items-center md:items-start gap-2">
+          <span class="text-lg font-bold text-amber-200">GoldenTechies</span>
+          <p class="text-slate-400 text-sm">
+            © 2024 GoldenTechies Agency. All rights reserved.
+          </p>
+        </div>
+        <div class="flex gap-8">
+          <a
+            class="text-slate-400 hover:text-amber-200 text-sm transition-colors"
+            href="#"
+            >Privacy Policy</a
+          >
+          <a
+            class="text-slate-400 hover:text-amber-200 text-sm transition-colors"
+            href="#"
+            >Terms of Service</a
+          >
+          <a
+            class="flex items-center gap-1 text-amber-500 hover:underline transition-all"
+            href="#home"
+          >
+            <span
+              class="material-symbols-outlined text-sm"
+              data-icon="arrow_upward"
+              >arrow_upward</span
+            >
+            Back to Top
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Mobile Bottom Navigation -->
+    <div
+      class="md:hidden fixed bottom-6 left-6 right-6 h-16 glass-card rounded-full z-50 flex items-center justify-around px-4 border border-primary/20"
+    >
+      <a class="text-primary flex flex-col items-center" href="#home">
+        <span
+          class="material-symbols-outlined"
+          data-icon="home"
+          style="font-variation-settings: &quot;FILL&quot; 1"
+          >home</span
+        >
+      </a>
+      <a class="text-slate-400 flex flex-col items-center" href="#services">
+        <span class="material-symbols-outlined" data-icon="build">build</span>
+      </a>
+      <a class="text-slate-400 flex flex-col items-center" href="#portfolio">
+        <span class="material-symbols-outlined" data-icon="work">work</span>
+      </a>
+      <a class="text-slate-400 flex flex-col items-center" href="#about">
+        <span class="material-symbols-outlined" data-icon="info">info</span>
+      </a>
+      <a class="text-slate-400 flex flex-col items-center" href="#contact">
+        <span class="material-symbols-outlined" data-icon="mail">mail</span>
+      </a>
+    </div>
+
+    <!-- Case Study Modal -->
+    <div id="caseStudyModal" class="fixed inset-0 z-50 hidden overflow-y-auto">
+      <div
+        class="fixed inset-0 bg-black/80 backdrop-blur-sm transition-opacity"
+      ></div>
+      <div class="relative min-h-screen flex items-center justify-center p-4">
+        <div
+          id="modalContent"
+          class="relative w-full max-w-5xl bg-surface-container rounded-2xl shadow-2xl overflow-hidden max-h-[90vh] overflow-y-auto"
+        >
+          <!-- Modal content will be dynamically inserted -->
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Project Data
+      const projects = [
+        {
+          id: 1,
+          title: "Smile Care Dental Clinic",
+          category: "Web App",
+          image: "./images/Dentist.png",
+          shortDescription:
+            "A comprehensive patient management system with real-time appointment booking and digital health records.",
+          technologies: ["React", "Node.js", "MongoDB", "Express", "Socket.io"],
+          features: [
+            "Real-time appointment scheduling with calendar integration",
+            "Digital health records management with secure encryption",
+            "Automated appointment reminders (SMS/Email/WhatsApp)",
+            "Patient history tracking and predictive analytics",
+            "Multi-branch management system with role-based access",
+            "Insurance claim processing and billing automation",
+            "Prescription management and e-prescribing",
+            "Patient portal for 24/7 access to health records",
+          ],
+          challenge:
+            "The dental clinic was struggling with manual appointment management, lost patient records, and inefficient communication between staff members. Patients frequently missed appointments due to lack of reminders, and the clinic had no centralized system for tracking treatment histories. Staff spent 15+ hours weekly on administrative tasks, leading to burnout and errors.",
+          solution:
+            "Developed a comprehensive web-based patient management system that digitizes all clinic operations. Implemented real-time appointment booking with automated reminders, secure digital health records with role-based access, and a dashboard for staff to manage daily operations efficiently. The system includes analytics for patient flow optimization and automated billing processes.",
+          results: [
+            "70% reduction in missed appointments",
+            "45% improvement in staff efficiency",
+            "100% patient record accessibility and security",
+            "30% increase in patient retention",
+            "Zero data loss incidents in 6 months",
+            "$50,000 annual savings in administrative costs",
+          ],
+          screenshots: [
+            "./images/dent1.png",
+            "./images/dent2.png",
+            "./images/dent3.png",
+            "./images/dent2.png",
+          ],
+          liveUrl: "https://dentist-y3hz.onrender.com",
+          duration: "1.5 months",
+          teamSize: "2 developers + 1 designer",
+          role: "Lead Full Stack Developer",
+        },
+        {
+          id: 2,
+          title: "Golden Nugget Bakery",
+          category: "Mobile App | E-commerce",
+          image: "./images/goldenNushe.png",
+          shortDescription:
+            "High-conversion mobile shop for an artisan bakery, featuring local delivery tracking and subscription models.",
+          technologies: [
+            "React Native",
+            "Node.js",
+            "MongoDB",
+            "Stripe API",
+            "Google Maps API",
+            "Firebase",
+          ],
+          features: [
+            "User-friendly product catalog with advanced filtering",
+            "Secure payment integration (Stripe, PayPal, UPI)",
+            "Real-time order tracking with live location",
+            "Subscription-based delivery plans (weekly/monthly)",
+            "Loyalty points system with rewards",
+            "Automated inventory management and alerts",
+            "Push notifications for order updates",
+            "Customer reviews and ratings system",
+          ],
+          challenge:
+            "The artisan bakery wanted to expand their reach beyond physical store but lacked an online presence. They needed a mobile app that could handle local deliveries, manage subscriptions for weekly bread deliveries, provide a seamless checkout experience, and integrate with their existing POS system.",
+          solution:
+            "Built a cross-platform React Native mobile app with integrated payment gateway and real-time delivery tracking. Implemented a subscription model for regular customers and a loyalty program to encourage repeat purchases. Added inventory management to prevent over-selling and integrated with delivery partners for seamless logistics.",
+          results: [
+            "150% increase in online sales within 3 months",
+            "500+ active subscribers in first month",
+            "4.8 star rating on App Store & Play Store",
+            "40% reduction in order processing time",
+            "300% ROI within 6 months",
+            "85% customer retention rate",
+          ],
+          screenshots: [
+            "./images/bak1.png",
+            "./images/bak2.png",
+            "./images/bak3.png",
+            "./images/bak4.png",
+          ],
+          liveUrl: "https://goldennuttey.onrender.com",
+          duration: "2 months",
+          teamSize: "3 developers",
+          role: "Lead Mobile Developer",
+        },
+        {
+          id: 3,
+          title: "FreshEggs Logistics",
+          category: "SaaS",
+          image: "./images/Villageegg.png",
+          shortDescription:
+            "Supply chain optimization platform for poultry distributors, reducing transit times by 24% via AI routing.",
+          technologies: [
+            "React",
+            "Python",
+            "Django",
+            "PostgreSQL",
+            "TensorFlow",
+            "Mapbox",
+            "Redis",
+          ],
+          features: [
+            "AI-powered route optimization with real-time adjustments",
+            "Real-time fleet tracking with geofencing",
+            "Predictive delivery ETAs using machine learning",
+            "Temperature monitoring for sensitive goods (IoT integration)",
+            "Automated dispatch system with load balancing",
+            "Analytics dashboard with custom KPIs",
+            "Driver performance tracking and scoring",
+            "Automated customer notifications",
+          ],
+          challenge:
+            "Poultry distributors faced significant losses due to delayed deliveries and lack of real-time tracking. Fresh eggs have a short shelf life of only 7-10 days, and traditional routing methods were causing spoilage and customer dissatisfaction. Manual dispatch processes led to inefficiencies and increased fuel costs.",
+          solution:
+            "Created an AI-driven logistics platform that optimizes delivery routes in real-time based on traffic, weather, delivery windows, and vehicle capacity. Implemented IoT temperature sensors and real-time tracking to ensure product quality throughout the journey. Added predictive analytics for demand forecasting and automated dispatch.",
+          results: [
+            "24% reduction in average transit times",
+            "35% decrease in fuel costs across fleet",
+            "50% reduction in product spoilage",
+            "98% on-time delivery rate achievement",
+            "Expanded to serve 50+ delivery vehicles",
+            "$200,000 annual savings in operational costs",
+          ],
+          screenshots: [
+            "./images/egg-1.png",
+            "./images/egg2.png",
+            "./images/egg3.png",
+            "./images/egg4.png",
+          ],
+          liveUrl: "https://eggapp-client-1.onrender.com",
+          duration: "6 months",
+          teamSize: "4 developers + 1 ML engineer",
+          role: "Lead Developer & AI Integration",
+        },
+      ];
+
+      // Render projects
+      function renderProjects() {
+        const container = document.getElementById("projects-container");
+        if (!container) return;
+
+        container.innerHTML = projects
+          .map(
+            (project) => `
+          <div class="flex flex-col group">
+            <div class="aspect-[4/3] bg-surface-container rounded-2xl overflow-hidden mb-6 relative">
+              <img
+                alt="${project.title}"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-100"
+                src="${project.image}"
+                onerror="this.src='https://placehold.co/600x400/171f33/ffc174?text=${encodeURIComponent(project.title)}'"
+              />
+              <div class="absolute top-4 left-4 flex gap-2">
+                ${project.category
+                  .split(" | ")
+                  .map(
+                    (cat) => `
+                  <span class="px-3 py-1 bg-slate-900/80 backdrop-blur text-[10px] uppercase tracking-widest text-primary font-bold rounded-full">${cat}</span>
+                `,
+                  )
+                  .join("")}
+              </div>
+            </div>
+            <h3 class="text-2xl font-bold text-on-surface mb-2">${project.title}</h3>
+            <p class="text-on-surface-variant text-sm mb-6 flex-grow">${project.shortDescription}</p>
+            <button
+              onclick="openCaseStudy(${project.id})"
+              class="inline-flex items-center gap-2 text-primary font-bold group/link hover:cursor-pointer"
+            >
+              View Case Study
+              <span class="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+            </button>
+          </div>
+        `,
+          )
+          .join("");
+      }
+
+      // Open Case Study Modal
+      function openCaseStudy(projectId) {
+        const project = projects.find((p) => p.id === projectId);
+        if (!project) return;
+
+        const modal = document.getElementById("caseStudyModal");
+        const modalContent = document.getElementById("modalContent");
+
+        modalContent.innerHTML = `
+          <div class="relative">
+            <!-- Close Button -->
+            <button onclick="closeModal()" class="absolute top-4 right-4 z-10 w-10 h-10 bg-black/50 rounded-full flex items-center justify-center hover:bg-black/70 transition-colors">
+              <span class="material-symbols-outlined text-white">close</span>
+            </button>
+
+            <!-- Hero Image -->
+            <div class="relative h-64 md:h-96 overflow-hidden">
+              <img src="${project.image}" alt="${project.title}" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/1200x600/171f33/ffc174?text=${encodeURIComponent(project.title)}'">
+              <div class="absolute inset-0 bg-gradient-to-t from-surface-container to-transparent"></div>
+            </div>
+
+            <!-- Content -->
+            <div class="p-6 md:p-8">
+              <!-- Title & Category -->
+              <div class="mb-6">
+                <div class="flex flex-wrap gap-2 mb-3">
+                  ${project.category
+                    .split(" | ")
+                    .map(
+                      (cat) => `
+                    <span class="px-3 py-1 bg-primary/20 text-primary text-xs font-bold rounded-full">${cat}</span>
+                  `,
+                    )
+                    .join("")}
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold text-on-surface mb-2">${project.title}</h2>
+                <p class="text-on-surface-variant">${project.shortDescription}</p>
+              </div>
+
+              <!-- Quick Stats -->
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                <div class="bg-surface-container-high rounded-xl p-4 text-center">
+                  <span class="material-symbols-outlined text-primary text-2xl mb-2">schedule</span>
+                  <div class="text-xs text-on-surface-variant">Duration</div>
+                  <div class="font-semibold text-on-surface">${project.duration}</div>
+                </div>
+                <div class="bg-surface-container-high rounded-xl p-4 text-center">
+                  <span class="material-symbols-outlined text-primary text-2xl mb-2">group</span>
+                  <div class="text-xs text-on-surface-variant">Team Size</div>
+                  <div class="font-semibold text-on-surface">${project.teamSize}</div>
+                </div>
+                <div class="bg-surface-container-high rounded-xl p-4 text-center">
+                  <span class="material-symbols-outlined text-primary text-2xl mb-2">person</span>
+                  <div class="text-xs text-on-surface-variant">My Role</div>
+                  <div class="font-semibold text-on-surface">${project.role}</div>
+                </div>
+                <div class="bg-surface-container-high rounded-xl p-4 text-center">
+                  <span class="material-symbols-outlined text-primary text-2xl mb-2">check_circle</span>
+                  <div class="text-xs text-on-surface-variant">Status</div>
+                  <div class="font-semibold text-green-500">Live in Production</div>
+                </div>
+              </div>
+
+              <!-- Challenge & Solution -->
+              <div class="grid md:grid-cols-2 gap-6 mb-8">
+                <div class="bg-surface-container-high rounded-xl p-6">
+                  <h3 class="text-xl font-bold text-on-surface mb-3 flex items-center gap-2">
+                    <span class="material-symbols-outlined text-primary">warning</span>
+                    The Challenge
+                  </h3>
+                  <p class="text-on-surface-variant leading-relaxed">${project.challenge}</p>
+                </div>
+                <div class="bg-surface-container-high rounded-xl p-6">
+                  <h3 class="text-xl font-bold text-on-surface mb-3 flex items-center gap-2">
+                    <span class="material-symbols-outlined text-primary">lightbulb</span>
+                    The Solution
+                  </h3>
+                  <p class="text-on-surface-variant leading-relaxed">${project.solution}</p>
+                </div>
+              </div>
+
+              <!-- Key Features -->
+              <div class="mb-8">
+                <h3 class="text-xl font-bold text-on-surface mb-4 flex items-center gap-2">
+                  <span class="material-symbols-outlined text-primary">star</span>
+                  Key Features
+                </h3>
+                <div class="grid md:grid-cols-2 gap-3">
+                  ${project.features
+                    .map(
+                      (feature) => `
+                    <div class="flex items-center gap-3 bg-surface-container-high rounded-lg p-3">
+                      <span class="material-symbols-outlined text-green-500 text-sm">check_circle</span>
+                      <span class="text-on-surface-variant text-sm">${feature}</span>
+                    </div>
+                  `,
+                    )
+                    .join("")}
+                </div>
+              </div>
+
+              <!-- Technologies -->
+              <div class="mb-8">
+                <h3 class="text-xl font-bold text-on-surface mb-4 flex items-center gap-2">
+                  <span class="material-symbols-outlined text-primary">code</span>
+                  Technologies Used
+                </h3>
+                <div class="flex flex-wrap gap-2">
+                  ${project.technologies
+                    .map(
+                      (tech) => `
+                    <span class="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-semibold">${tech}</span>
+                  `,
+                    )
+                    .join("")}
+                </div>
+              </div>
+
+              <!-- Screenshots -->
+              <div class="mb-8">
+                <h3 class="text-xl font-bold text-on-surface mb-4 flex items-center gap-2">
+                  <span class="material-symbols-outlined text-primary">image</span>
+                  Project Gallery
+                </h3>
+                <div class="grid md:grid-cols-2 gap-4">
+                  ${project.screenshots
+                    .map(
+                      (screenshot) => `
+                    <div class="rounded-xl overflow-hidden bg-surface-container-high">
+                      <img src="${screenshot}" alt="Screenshot" class="w-full h-auto hover:scale-105 transition-transform duration-300">
+                    </div>
+                  `,
+                    )
+                    .join("")}
+                </div>
+              </div>
+
+              <!-- Results -->
+              <div class="mb-8 bg-gradient-to-r from-primary/10 to-tertiary/10 rounded-2xl p-6">
+                <h3 class="text-xl font-bold text-on-surface mb-4 flex items-center gap-2">
+                  <span class="material-symbols-outlined text-primary">trending_up</span>
+                  Measurable Results
+                </h3>
+                <div class="grid md:grid-cols-2 gap-4">
+                  ${project.results
+                    .map(
+                      (result) => `
+                    <div class="flex items-center gap-3">
+                      <span class="material-symbols-outlined text-green-500">check_circle</span>
+                      <span class="text-on-surface font-semibold">${result}</span>
+                    </div>
+                  `,
+                    )
+                    .join("")}
+                </div>
+              </div>
+
+              <!-- CTA Buttons -->
+              <div class="flex flex-wrap gap-4">
+                <a href="${project.liveUrl}" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-br from-primary-container to-primary text-on-primary font-bold rounded-xl hover:scale-105 transition-transform">
+                  <span class="material-symbols-outlined">open_in_new</span>
+                  View Live Project
+                </a>
+                <button onclick="closeModal()" class="inline-flex items-center gap-2 px-6 py-3 border border-primary text-primary font-bold rounded-xl hover:bg-primary/10 transition-colors">
+                  <span class="material-symbols-outlined">close</span>
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        `;
+
+        modal.classList.remove("hidden");
+        document.body.style.overflow = "hidden";
+      }
+
+      // Close Modal
+      function closeModal() {
+        const modal = document.getElementById("caseStudyModal");
+        modal.classList.add("hidden");
+        document.body.style.overflow = "auto";
+      }
+
+      // Close modal when clicking outside
+      document
+        .getElementById("caseStudyModal")
+        ?.addEventListener("click", function (e) {
+          if (e.target === this) {
+            closeModal();
+          }
+        });
+
+      // Close modal with Escape key
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+          closeModal();
+        }
+      });
+
+      // Initialize on page load
+      document.addEventListener("DOMContentLoaded", () => {
+        renderProjects();
+      });
+    </script>
+  </body>
+</html>
